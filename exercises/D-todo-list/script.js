@@ -11,15 +11,18 @@ function todoList(todos) {
 
 	let todoItems = document.querySelectorAll('.todo-value');
 	console.log(todoItems)
-	function lineThrough (li) {
-		if (!li.style.textDecoration) {
-			li.style.textDecoration = 'line-through';
-		};
+	function lineThrough (event) {
+		console.log(event.target)
+		if (!event.target.style.textDecoration) {
+			event.target.style.textDecoration = 'line-through';
+		} else if (event.target.style.textDecoration) {
+			event.target.style.textDecoration = '';
+		}
 	};
-	todoItems.forEach(lineThrough)
-	//todoItems.forEach((todoItem) => {
-		//todoItem.addEventListener('click', lineThrough)
-	//})
+
+	todoItems.forEach((todoItem) => {
+		todoItem.addEventListener('click', lineThrough)
+	})
 }
 
 const todos = [
