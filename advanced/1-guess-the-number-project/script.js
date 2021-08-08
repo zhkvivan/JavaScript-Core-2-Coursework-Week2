@@ -17,7 +17,10 @@ function guessNumber() {
 	if (guess <= 0 || guess === '' || guess > 100) {
 		output.value = 'Please enter a number between 1 and 100';
 		finalOutput.value = '';
+		guessInput.type = 'text';
 		guessInput.value = ' ';
+		guessInput.type = 'number';
+
 		//guess = ' '
 		return;
 	}
@@ -35,7 +38,9 @@ function guessNumber() {
 	} else if (guess == randomNumber) {
 		finalOutput.value = 'Guess is correct. You win!';
 	}
+	guessInput.type = 'text';
 	guessInput.value = ' ';
+	guessInput.type = 'number';
 	//guess = ' '
 
 	//If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
@@ -53,7 +58,12 @@ function newGame() {
 	randomNumber = Math.floor(Math.random() * 100 + 1);
 
 	let guessInput = document.querySelector('.inputs-Values');
+	guessInput.type = 'text';
 	guessInput.value = ' ';
+	guessInput.type = 'number'
+	tries = 0;
+	document.querySelector('.final-output').value =
+		'Guess a number between 1 and 100. You have 7 tries.';
 	//Your code here
 	//Reset randomNumber
 	//Reset users input field
