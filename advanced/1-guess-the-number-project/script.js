@@ -9,7 +9,7 @@ function guessNumber() {
 	output.value = '';
 	let finalOutput = document.querySelector('.final-output');
 
-	if (tries === 6) {
+	if (tries === 6 && guess != randomNumber) {
 		finalOutput.value = 'You Lose, the number was ' + randomNumber;
 		return;
 	}
